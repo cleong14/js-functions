@@ -87,7 +87,21 @@ function square (x) {
  * @param {number} y
  * @return {number} the result
  */
-
+function calculate (operation, x, y) {
+  if (operation === 'add') {
+    var sum = x + y;
+    return 'x + y = ' + sum;
+  } else if (operation === 'subtract') {
+    var difference = x - y;
+    return 'x - y = ' + difference;
+  } else if (operation === 'multiply') {
+    var product = x * y;
+    return 'x * y = ' + product;
+  } else if (operation === 'divide') {
+    var quotient = x / y;
+    return 'x / y = ' + quotient;
+  }
+}
 
 /**
  * Returns true if `a` is greater than `b`.
@@ -95,7 +109,11 @@ function square (x) {
  * @param {number} b
  * @return {boolean} `a` is larger than `b`
  */
-
+function isGreaterThan (a, b) {
+  if (a > b) {
+    return true + ', a is larger than b';
+  }
+}
 
 /**
  * Returns true if `a` is less than `b`.
@@ -103,7 +121,11 @@ function square (x) {
  * @param {number} b
  * @return {boolean} `a` is smaller than `b`
  */
-
+function isLessThan (a, b) {
+  if (a < b) {
+    return true + ', a is smaller than b';
+  }
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -111,7 +133,11 @@ function square (x) {
  * @param {number} b
  * @return {boolean} the numbers are equal
  */
-
+function areEqual (a, b) {
+  if (a === b) {
+    return true + ', the numbers are equal';
+  }
+}
 
 /**
  * Returns the smallest value of two numbers.
@@ -119,7 +145,13 @@ function square (x) {
  * @param {number} y
  * @return {number} the smallest number
  */
-
+function minimum (x, y) {
+  if (x < y) {
+    return x;
+  } else {
+    return y;
+  }
+}
 
 /**
  * Returns the largest value of two numbers.
@@ -127,21 +159,35 @@ function square (x) {
  * @param {number} y
  * @return {number} the largest number
  */
-
+function maximum (x, y) {
+  if (x > y) {
+    return x;
+  } else {
+    return y;
+  }
+}
 
 /**
  * Returns true if `n` is even.
  * @param {number} n
  * @return {boolean} the number is even
  */
-
+function isEven (n) {
+  if (n % 2 === 0) {
+    return true + ' the number is even';
+  }
+}
 
 /**
  * Returns true if `n` is odd.
  * @param {number} n
  * @return {boolean} the number is odd
  */
-
+function isOdd (n) {
+  if (n % 3 === 0 || n === 1) {
+    return true + ' the number is odd';
+  }
+}
 
 /**
  * Returns a letter grade.
@@ -154,7 +200,19 @@ function square (x) {
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
-
+function letterGrade (score, total) {
+  if (score >= 90 && score <= total) {
+    return 'A';
+  } else if (score >= 80 && score <= 89) {
+    return 'B';
+  } else if (score >= 70 && score <= 79) {
+    return 'C';
+  } else if (score >= 60 && score <= 69) {
+    return 'D';
+  } else if (score >= 0 && score <= 59) {
+    return 'F';
+  }
+}
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -163,7 +221,11 @@ function square (x) {
  * @param {object} restaurant   represents a restaurant object
  * @return {object} restaurant
  */
+function incrementReviews (restaurant) {
+  for (var reviews in restaurant) {
 
+  }
+}
 
 /**
  * Joins two strings with a space.
@@ -171,7 +233,9 @@ function square (x) {
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
-
+function combine (word1, word2) {
+  return word1 + ' ' + word2;
+}
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -180,4 +244,9 @@ function square (x) {
  * @param {number} radius
  * @return {object} circle
  */
-
+function createCircle (radius) {
+  var circle = {
+    circumference: 2 * Math.PI * radius,
+    area: Math.PI * Math.pow(radius, 2)
+  };
+}
