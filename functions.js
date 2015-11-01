@@ -90,16 +90,20 @@ function square (x) {
 function calculate (operation, x, y) {
   if (operation === 'add') {
     var sum = x + y;
-    return 'x + y = ' + sum;
+    console.log( x + ' + ' + y + ' = ' + sum);
+    return sum;
   } else if (operation === 'subtract') {
     var difference = x - y;
-    return 'x - y = ' + difference;
+    console.log( x + ' - ' + y + ' = ' + difference);
+    return difference;
   } else if (operation === 'multiply') {
     var product = x * y;
-    return 'x * y = ' + product;
+    console.log( x + ' * ' + y + ' = ' + product);
+    return product;
   } else if (operation === 'divide') {
     var quotient = x / y;
-    return 'x / y = ' + quotient;
+    console.log( x + ' / ' + y + ' = ' + quotient);
+    return quotient;
   }
 }
 
@@ -111,7 +115,9 @@ function calculate (operation, x, y) {
  */
 function isGreaterThan (a, b) {
   if (a > b) {
-    return true + ', a is larger than b';
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -123,7 +129,9 @@ function isGreaterThan (a, b) {
  */
 function isLessThan (a, b) {
   if (a < b) {
-    return true + ', a is smaller than b';
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -135,7 +143,9 @@ function isLessThan (a, b) {
  */
 function areEqual (a, b) {
   if (a === b) {
-    return true + ', the numbers are equal';
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -184,8 +194,10 @@ function isEven (n) {
  * @return {boolean} the number is odd
  */
 function isOdd (n) {
-  if (n % 3 === 0 || n === 1) {
-    return true + ' the number is odd';
+  if (n + 1 % 2 !== 0) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -201,15 +213,15 @@ function isOdd (n) {
  * @return {string} the score represented as a letter grade
  */
 function letterGrade (score, total) {
-  if (score >= 90 && score <= total) {
+  if (score / total >= 0.9) {
     return 'A';
-  } else if (score >= 80 && score <= 89) {
+  } else if (score / total >= 0.8) {
     return 'B';
-  } else if (score >= 70 && score <= 79) {
+  } else if (score / total >= 0.7) {
     return 'C';
-  } else if (score >= 60 && score <= 69) {
+  } else if (score / total >= 0.6) {
     return 'D';
-  } else if (score >= 0 && score <= 59) {
+  } else if (score / total < 0.6) {
     return 'F';
   }
 }
@@ -222,9 +234,12 @@ function letterGrade (score, total) {
  * @return {object} restaurant
  */
 function incrementReviews (restaurant) {
-  for (var reviews in restaurant) {
-
+  if (restaurant.reviews) {
+    restaurant.reviews += 1;
+  } else {
+    restaurant.reviews = 1;
   }
+  return restaurant;
 }
 
 /**
@@ -249,4 +264,5 @@ function createCircle (radius) {
     circumference: 2 * Math.PI * radius,
     area: Math.PI * Math.pow(radius, 2)
   };
+  return circle;
 }
